@@ -49,7 +49,8 @@ prompt = PromptTemplate(
 )
 llm = OpenAI(temperature=0.9)
 
-st.write('>', llm(prompt))
+st.write('>', llm("hi"))
+# st.write('>', llm(prompt))
 # st.write('>', llm(prompt2))
 
 # llm = OpenAI(model_name="text-davinci-003", n=2, best_of=2)
