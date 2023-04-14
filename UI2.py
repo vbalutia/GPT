@@ -1,6 +1,5 @@
 import streamlit as st
 from streamlit_option_menu import option_menu
-import os
 from langchain.llms import OpenAI
 from langchain.chains import ConversationChain
 from langchain.prompts import PromptTemplate
@@ -37,29 +36,18 @@ with col3:
 context = 'I want you to write Headline for LinkedIn profiles.The headline should be professional and attractive. What is a good headline for a person who has '
 prompt  = context + experience +' experience in '+ role + ' role in ' + industry + ' industry.'
 
-context2 = """I want you to write Headline for LinkedIn profiles.
-The headline should be professional and attractive.
-Here are some examples of good headlines:
-- Head of Insurance Analytics Solutions, Crain’s Notable Leader in Consulting
-- Most Influential AI Leaders in India Top Analytics Leaders in India
-- Helping smart managers keep their employees productive and engaged
-- Helping to empower anyone to drive meaningful change through collaborative work
-- Ecosystem Builder, Partnership Expert, Business Development Enthusiast, Startup Founder
-- Everyone's favorite Tech Recruiter | Nerd at heart | Samwise Gamgee to your Frodo Baggins in recruiting
-What is a good headline for a person who has """
-prompt2  = context2 + experience +' experience in '+ role + ' role in ' + industry + ' industry.'
 
-# template = """
-# I want you to write Headline for LinkedIn profiles.The headline should be short, professional and attractive. What is a good headline for a person who has {input}?
-# """
-#
-# prompt = PromptTemplate(
-#     input_variables=[input],
-#     template=template,
-# )
-# llm = OpenAI(temperature=0.9)
+template = """
+I want you to write Headline for LinkedIn profiles.The headline should be short, professional and attractive. What is a good headline for a person who has {input}?
+"""
 
-# st.write('>', llm(prompt))
+prompt = PromptTemplate(
+    input_variables=[input],
+    template=template,
+)
+llm = OpenAI(temperature=0.9)
+
+st.write('>', llm(prompt))
 # st.write('>', llm(prompt2))
 
 # llm = OpenAI(model_name="text-davinci-003", n=2, best_of=2)
