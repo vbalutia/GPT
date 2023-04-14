@@ -38,19 +38,10 @@ with col3:
 context = 'I want you to write Headline for LinkedIn profiles.The headline should be professional and attractive. What is a good headline for a person who has '
 prompt  = context + experience +' experience in '+ role + ' role in ' + industry + ' industry.'
 
-
-template = """
-I want you to write Headline for LinkedIn profiles.The headline should be short, professional and attractive. What is a good headline for a person who has {input}?
-"""
-
-prompt = PromptTemplate(
-    input_variables=[input],
-    template=template,
-)
 llm = OpenAI(temperature=0.9)
 
-st.write('>', llm("hi"))
-# st.write('>', llm(prompt))
+# st.write('>', llm("hi"))
+st.write('>', llm(prompt))
 # st.write('>', llm(prompt2))
 
 # llm = OpenAI(model_name="text-davinci-003", n=2, best_of=2)
