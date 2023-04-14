@@ -1,4 +1,5 @@
 import streamlit as st
+import os
 os.environ["OPENAI_API_KEY"]
 from streamlit_option_menu import option_menu
 from langchain.llms import OpenAI
