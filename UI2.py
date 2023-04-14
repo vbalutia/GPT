@@ -57,11 +57,11 @@ prompt2  = context2 + experience +' experience in '+ role + ' role in ' + indust
 #     input_variables=[input],
 #     template=template,
 # )
-llm = OpenAI(temperature=0.9)
+# llm = OpenAI(temperature=0.9)
 
-st.write('>', llm(prompt))
-st.write('>', llm(prompt2))
+# st.write('>', llm(prompt))
+# st.write('>', llm(prompt2))
 
-llm = OpenAI(model_name="text-davinci-003", n=2, best_of=2)
-st.write('>', llm(prompt))
-st.write('>', llm(prompt2))
+# llm = OpenAI(model_name="text-davinci-003", n=2, best_of=2)
+# st.write('>', llm(prompt))
+# st.write('>', llm(prompt2))
