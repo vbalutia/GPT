@@ -1,6 +1,6 @@
 import streamlit as st
 import os
-os.environ["OPENAI_API_KEY"]
+os.environ["OPENAI_API_KEY"] = st.secrets["OPENAI_API_KEY"]
 from streamlit_option_menu import option_menu
 from langchain.llms import OpenAI
 from langchain.chains import ConversationChain
