@@ -35,8 +35,8 @@ with col3:
    st.subheader("Industry")
    industry = st.radio("3", ["Tech", "Financial Services", "Consulting" ], label_visibility= 'collapsed')
 
-context = 'I want you to write Headline for LinkedIn profiles.The headline should be professional and attractive. What is a good headline for a person who has '
-prompt  = context + experience +' experience in '+ role + ' role in ' + industry + ' industry.'
+
+prompt  = st.secrets["context"] + experience +' experience in '+ role + ' role in ' + industry + ' industry.'
 
 llm = OpenAI(temperature=0.9)
 
